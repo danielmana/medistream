@@ -1,5 +1,40 @@
-<!doctype html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><title></title><meta name="description" content=""><meta name="viewport" content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="styles/cd367326.vendor.css"><link rel="stylesheet" href="styles/8ebd35e8.main.css"><body ng-app="medistreamApp" class="ng-cloak"><!--[if lt IE 7]>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/1d7769e0.vendor.css"/>
+    <link rel="stylesheet" href="styles/3ed8ec4c.main.css"/>
+  </head>
+  <body ng-app="medistreamApp" class="ng-cloak">
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--><!-- header --><div ng-include="'views/header.html'"></div><!-- content --><div class="container" ng-view=""></div><!-- footer --><div ng-include="'views/footer.html'"></div><!--[if lt IE 9]>
-    <script src="scripts/4d08494f.ie-shim.js"></script>
-    <![endif]--><script src="scripts/ac849daf.vendor.js"></script><script src="scripts/fa84f8c2.scripts.js"></script>
+    <![endif]-->
+
+    <!-- header -->
+    <div ng-include="'views/header.html'"></div>
+
+    <div id="wrap">
+      <div class="content" ng-view=""></div>
+
+      <div id="push"></div>
+    </div>
+
+    <!-- footer -->
+    <div ng-include="'views/footer.html'"></div>
+
+    <!--[if lt IE 9]>
+    <script src="scripts/4d08494f.shim.js"></script>
+    <![endif]-->
+
+    <script src="scripts/0dba31d1.vendor.js"></script>
+
+    <script src="scripts/81448f91.scripts.js"></script>
+</body>
+</html>

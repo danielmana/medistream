@@ -1,0 +1,29 @@
+<carousel interval="5000">
+  <slide ng-repeat="slide in slides">
+    <img ng-src="{{slide.image}}">
+    <div class="carousel-caption">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>{{slide.title}}</h1>
+            <h3>{{slide.description}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </slide>
+  <!--
+    <slide>
+      <img ng-src="images/slide2.png">
+      <div class="carousel-caption">
+        <h1>Slide 2</h1>
+        <h3>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h3>
+      </div>
+    </slide>-->
+</carousel>
+
+<div class="container" style="text-align: center">
+  <div class="row">
+    <h1><a href="#register">Register</a> to find an event.</h1>
+  </div>
+</div>
