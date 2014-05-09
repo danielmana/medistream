@@ -1,1 +1,36 @@
-<h1>Event</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="page-header">{{event.title}}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <p class="lead">{{event.abstract}}</p>
+      <p>Website: <a ng-href="{{event.link}}">{{event.link}}</a></p>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p><strong>{{event.organizer.name}}</strong></p>
+          <p><span class="glyphicon glyphicon-map-marker"></span> {{event.location}}</p>
+          <p><span class="glyphicon glyphicon-time"></span> {{event.start_date|date}} - {{event.finish_date|date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <tbody>
+        <tr ng-repeat="talk in event.talks">
+          <td><h4><p class="text-muted pull-right" style="white-space: nowrap;">{{talk.start_time|date:'shortTime'}}</p></h4></td>
+          <td><h4>{{talk.title}} <br><small>Speaker1, speaker2</small></h4></td>
+          <td><h4><button class="btn btn-primary"><span class="glyphicon glyphicon-film"></span> Video</button></h4></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

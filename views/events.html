@@ -1,1 +1,19 @@
-<h1>Events</h1>
+<div class="container">
+  <h1 class="page-header">{{events.length}} Events</h1>
+  <ul class="list-unstyled">
+    <li ng-repeat="event in events">
+      <h3><a ng-href="#events/{{event.id}}">{{event.title}}</a></h3>
+      <dl class="dl-horizontal">
+        <dt>Organizer</dt>
+        <dd>{{event.organizer.name}}</dd>
+        <dt>Location</dt>
+        <dd>{{event.location}}</dd>
+        <dt>Dates</dt>
+        <dd>{{event.start_date|date}} - {{event.finish_date|date}}</dd>
+        <dt>Abstract</dt>
+        <dd>{{event.abstract}}</dd>
+      </dl>
+      <hr>
+    </li>
+  </ul>
+</div>
