@@ -1,19 +1,25 @@
 <div class="container">
-  <h1 class="page-header">{{events.length}} Events</h1>
-  <ul class="list-unstyled">
-    <li ng-repeat="event in events">
-      <h3><a ng-href="#events/{{event.id}}">{{event.title}}</a></h3>
-      <dl class="dl-horizontal">
-        <dt>Organizer</dt>
-        <dd>{{event.organizer.name}}</dd>
-        <dt>Location</dt>
-        <dd>{{event.location}}</dd>
-        <dt>Dates</dt>
-        <dd>{{event.start_date|date}} - {{event.finish_date|date}}</dd>
-        <dt>Abstract</dt>
-        <dd>{{event.abstract}}</dd>
-      </dl>
-      <hr>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">Events</li>
+  </ol>
+  <ul class="list-unstyled list-clickable">
+    <li ng-repeat="event in events" ng-click="select(event.id)">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 style="margin-top: 0px;">{{event.title}}</h3>
+          <p class="lead lead-short">{{event.abstract}}</p>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><strong>{{event.organizer.name}}</strong></p>
+              <p><span class="glyphicon glyphicon-map-marker"></span> {{event.location}}</p>
+              <p><span class="glyphicon glyphicon-time"></span> {{event.start_date|date}} - {{event.finish_date|date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

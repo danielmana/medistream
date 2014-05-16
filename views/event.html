@@ -1,13 +1,18 @@
 <div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#events">Events</a></li>
+    <li class="active">{{event.title}}</li>
+  </ol>
   <div class="row">
     <div class="col-md-12">
-      <h2 class="page-header">{{event.title}}</h2>
+      <h2>{{event.title}}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8">
-      <p class="lead">{{event.abstract}}</p>
-      <p>Website: <a ng-href="{{event.link}}">{{event.link}}</a></p>
+      <p class="lead" style="margin-bottom: 10px;">{{event.abstract}}</p>
+      <p ng-if="event.link"><a ng-href="{{event.link}}"><span class="glyphicon glyphicon-link"></span> {{event.link}}</a></p>
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
@@ -21,16 +26,29 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-md-12">
-      <table class="table table-hover">
-        <tbody>
-        <tr ng-repeat="talk in event.talks">
-          <td><h4><p class="text-muted pull-right" style="white-space: nowrap;">{{talk.start_time|date:'shortTime'}}</p></h4></td>
-          <td><h4>{{talk.title}} <br><small>Speaker1, speaker2</small></h4></td>
-          <td><h4><button class="btn btn-primary"><span class="glyphicon glyphicon-film"></span> Video</button></h4></td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-md-12" ng-repeat="day in days">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{day}}</h3>
+        </div>
+        <div class="panel-body" style="padding: 0px;">
+          <ul class="list-unstyled list-clickable" style="margin-bottom: 0;">
+            <li ng-repeat="talk in talksByDay[day]" ng-click="select(talk.id)" style="padding: 10px 17px;">
+              <div class="row">
+                <div class="col-md-1">
+                  <h5><p class="text-muted" style="white-space: nowrap;">{{talk.start_time|date:'shortTime'}}</p></h5>
+                </div>
+                <div class="col-md-9">
+                  <h4>{{talk.title}} <br><small>{{talk.speaker.name}}</small></h4>
+                </div>
+                <div class="col-md-2 hidden-xs hidden-sm">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE1MCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE5cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MzAweDIwMDwvdGV4dD48L3N2Zz4=" style="width: 100%;">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
