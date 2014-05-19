@@ -33,7 +33,7 @@
         </div>
         <div class="panel-body" style="padding: 0px;">
           <ul class="list-unstyled list-clickable" style="margin-bottom: 0;">
-            <li ng-repeat="talk in talksByDay[day]" ng-click="select(talk.id)" style="padding: 10px 17px;">
+            <li ng-repeat="talk in talksByDay[day]" ng-click="selectTalk(talk.id)" style="padding: 10px 17px;">
               <div class="row">
                 <div class="col-md-1">
                   <h5><p class="text-muted" style="white-space: nowrap;">{{talk.start_time|date:'shortTime'}}</p></h5>
