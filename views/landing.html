@@ -1,29 +1,70 @@
-<carousel class="hidden-xs" interval="5000">
-  <slide ng-repeat="slide in slides">
-    <img ng-src="{{slide.image}}">
-    <div class="carousel-caption">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1>{{slide.title}}</h1>
-            <h3>{{slide.description}}</h3>
+<div class="landing">
+  <carousel class="hidden-xs" interval="3000">
+    <slide ng-repeat="slide in slides">
+      <img ng-src="{{slide.image}}" style="margin:auto;">
+      <div class="carousel-caption">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>{{slide.title}}</h1>
+              <h3>{{slide.description}}</h3>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </slide>
-  <!--
-    <slide>
-      <img ng-src="images/slide2.png">
-      <div class="carousel-caption">
-        <h1>Slide 2</h1>
-        <h3>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h3>
-      </div>
-    </slide>-->
-</carousel>
+    </slide>
+  </carousel>
 
-<div class="container" style="text-align: center">
-  <div class="row">
-    <h1><a href="#register">Register</a> to find an event.</h1>
-  </div>
+  <section id="tutorial" class="tutorial container text-center">
+    <br>
+    <h1>Neque porro quisquam est qui dolorem<br>ipsum quia dolor sit amet.</h1>
+    <h2>Neque porro quisquam est qui dolorem ipsum quia<br>dolor sit amet. Ready? Let’s get started.</h2>
+    <p>
+      <button type="button" class="btn btn-default btn-lg">Log in</button>
+      <button type="button" class="btn btn-primary btn-lg">Register</button>
+    </p>
+
+    <!-- ### Start of tutorials -->
+    <ul id="user-site" class="tutorial-list wrapper active">
+      <li id="create-repo-step" class="image-right animate-in">
+        <h4>Find an event</h4>
+        <p>Head over to <a href="#events">events</a> and find the one you are interested on.</p>
+
+        <p class="details">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+          dicta sunt explicabo.</p>
+      </li>
+
+      <li class="question animate-in">
+        <h4>What is your speciality?</h4>
+        <div class="btn-group tabs">
+          <label class="btn btn-lg btn-default" ng-repeat="s in specialities" ng-model="conf.speciality" btn-radio="'{{s}}'">{{s}}</label>
+        </div>
+      </li>
+
+      <li id="new-user-step-1" class="option-newuser-w animate-in">
+        <h4>Choose a talk and watch the preview</h4>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+        <img src="images/snapshot_preview.png" width="1054" alt="GitHub for Windows screenshot" class="full-size"/>
+      </li>
+
+      <li id="setup-in-desktop" class="option-ghfm option-ghfw image-right animate-in">
+        <h4>Use your voucher</h4>
+        <p>Click the link "use a code".</p>
+
+        <p class="details">In the case you don't have a voucher you can contact us at contact@medistream.es.</p>
+      </li>
+
+      <li class="option-all animate-in">
+        <h4>…and you're done!</h4>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo.</p>
+        <div class="hero-octicon">
+          <h1><a href="#events"><span class="glyphicon glyphicon-ok" style="top: 10px;"></span></a></h1>
+        </div>
+      </li>
+    </ul>
+    <!-- End of user site tutorial -->
+  </section>
 </div>

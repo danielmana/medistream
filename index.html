@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/8727a602.vendor.css"/>
-    <link rel="stylesheet" href="styles/0974ac2c.main.css"/>
+    <link rel="stylesheet" href="styles/5979dcca.main.css"/>
   </head>
   <body ng-app="medistreamApp" class="ng-cloak">
     <!--[if lt IE 7]>
@@ -21,12 +21,13 @@
     <div ng-include="'views/header.html'"></div>
 
     <div id="wrap">
-      <div id="login-holder" class="container">
-        <div login></div>
-      </div>
+      <!-- content -->
+      <div class="content" ng-view="" ng-if="!loginRequired"></div>
 
-      <div class="content" ng-view=""></div>
+      <!-- login -->
+      <div class="login" login ng-if="loginRequired"></div>
 
+      <!-- helper for sticky footer -->
       <div id="push"></div>
     </div>
 
@@ -41,8 +42,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.js"></script>
 
-    <script src="scripts/f323f778.vendor.js"></script>
+    <script src="scripts/531f56f8.vendor.js"></script>
 
-    <script src="scripts/fba718ff.scripts.js"></script>
+    <script src="scripts/96e10fad.scripts.js"></script>
 </body>
 </html>
