@@ -19,9 +19,9 @@
     <br>
     <h1>Neque porro quisquam est qui dolorem<br>ipsum quia dolor sit amet.</h1>
     <h2>Neque porro quisquam est qui dolorem ipsum quia<br>dolor sit amet. Ready? Let’s get started.</h2>
-    <p>
-      <button type="button" class="btn btn-default btn-lg">Log in</button>
-      <button type="button" class="btn btn-primary btn-lg">Register</button>
+    <p ng-hide="user">
+      <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">Log in</button>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">Register</button>
     </p>
 
     <!-- ### Start of tutorials -->

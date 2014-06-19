@@ -16,15 +16,16 @@
 
       <!-- user unregistered or not logged -->
       <form class="navbar-form navbar-right" ng-if="!user">
-        <button type="button" class="btn btn-default" ng-click="login()">Log in</button>
-        <button type="button" class="btn btn-primary" ng-click="login(true)">Register</button>
+        <button type="button" class="btn btn-default" ng-click="showLogin()">Log in</button>
+        <button type="button" class="btn btn-primary" ng-click="showLogin(true)">Register</button>
       </form>
 
       <!-- user logged -->
       <ul class="nav navbar-nav navbar-right" ng-if="user">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-user"></span>
-          {{user.username}} <b class="caret"></b></a>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
+            <span class="glyphicon glyphicon-user"></span> {{user.username}} <b class="caret"></b>
+          </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#account">Account</a></li>
             <li><a href="" ng-click="logout()">Sign out</a></li>
