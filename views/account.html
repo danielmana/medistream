@@ -29,7 +29,7 @@
         <div class="form-group" ng-class="{'has-error': !user.speciality.id}">
           <label class="control-label" for="inputSpeciality">Speciality</label>
           <input type="text" id="inputSpeciality" class="form-control" placeholder="Speciality"
-                 typeahead="speciality as speciality.name for speciality in specialities | filter:$viewValue"
+                 typeahead="speciality as speciality.name for speciality in specialities | filter:$viewValue | limitTo:8"
                  ng-model="user.speciality" typeahead-editable="false">
         </div>
         <div class="form-group">
