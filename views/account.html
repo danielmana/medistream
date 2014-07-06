@@ -1,1 +1,41 @@
-<h1>Account</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <form name="formRegister" role="form" ng-submit="submit()">
+        <h1 class="page-header">Account</h1>
+
+        <!-- error message -->
+        <div class="alert alert-danger" ng-if="error">
+          <strong>There were problems saving your account.</strong><br>
+          <ul>
+            <li ng-if="error.username">{{error.username[0]}}</li>
+          </ul>
+        </div>
+
+        <!-- success message -->
+        <div class="alert alert-success" ng-if="success">
+          <strong>Account saved.</strong>
+        </div>
+
+        <!-- form -->
+        <div class="form-group">
+          <label class="control-label" for="inputName">Name</label>
+          <input type="text" class="form-control" id="inputName" ng-model="user.first_name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="inputName">Surname</label>
+          <input type="text" class="form-control" id="inputSurname" ng-model="user.last_name" placeholder="Surname">
+        </div>
+        <div class="form-group" ng-class="{'has-error': !user.speciality.id}">
+          <label class="control-label" for="inputSpeciality">Speciality</label>
+          <input type="text" id="inputSpeciality" class="form-control" placeholder="Speciality"
+                 typeahead="speciality as speciality.name for speciality in specialities | filter:$viewValue"
+                 ng-model="user.speciality" typeahead-editable="false">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" ng-disabled="formRegister.$invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

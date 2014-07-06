@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default footer" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" ng-controller="FooterCtrl">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-collapse-1">
@@ -9,14 +9,21 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="footer-collapse-1">
-      <div class="navbar-left">
-        <p class="navbar-text">© 2014 Medistream - <a ng-href="#terms">Terms & Privacy</a></p>
-      </div>
-      <div class="navbar-right">
-        <p class="navbar-text"><a ng-href="#collaborate">Collaborate</a></p>
-        <p class="navbar-text"><a ng-href="#contact">Contact</a></p>
-        <p class="navbar-text"><a ng-href="#about">About</a></p>
-      </div>
+      <ul class="nav navbar-nav navbar-left">
+        <li><p class="navbar-text">© 2014 Medistream</p></li>
+        <li><a ng-href="#terms">Terms & Privacy</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-href="#collaborate">Collaborate</a></li>
+        <li><a ng-href="#contact">{{'Contact'|translate}}</a></li>
+        <li><a ng-href="#about">About</a></li>
+        <li class="dropdown" style="cursor: pointer;">
+          <a class="dropdown-toggle" data-toggle="dropdown">{{languages[currentLocale]}} <b class=caret></b></a>
+          <ul class=dropdown-menu role=menu>
+            <li data-ng-repeat="(locale, name) in languages" data-ng-class="{disabled:locale===currentLocale}"><a href="" data-ng-click="setLocale(locale)">{{name}}</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
