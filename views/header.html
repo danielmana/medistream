@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
@@ -7,26 +7,41 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Medistream.tv</a>
+      <a class="navbar-brand" href="#" style="height: 100px;"><img src="images/logo.png" height="100%"></a>
     </div>
     <div class="collapse navbar-collapse" id="header-collapse">
+
+      <!-- tabs -->
       <ul class="nav navbar-nav">
-        <li ng-class="{active: isActive('events')}"><a href="#events">Events</a></li>
+        <li ng-class="{active: isActive('events')}">
+          <a class="text-center" href="#events" style="padding-bottom: 9px; width: 100px;">
+            <p style="font-size: 30px; padding-top: 12px; margin-bottom: 5px;"><span class="glyphicon glyphicon-calendar"></span></p>
+            <p>Events</p>
+          </a>
+        </li>
+        <li ng-class="{active: isActive('talks')}" ng-if="user">
+          <a class="text-center" href="#talks" style="padding-bottom: 9px; width: 100px;">
+            <p style="font-size: 30px; padding-top: 12px; margin-bottom: 5px;"><span class="glyphicon glyphicon-film"></span></p>
+            <p>My Videos</p>
+          </a>
+        </li>
       </ul>
 
       <!-- user unregistered or not logged -->
-      <form class="navbar-form navbar-right" ng-if="!user">
-        <button type="button" class="btn btn-default" ng-click="showLogin()">Log in</button>
-        <button type="button" class="btn btn-primary" ng-click="showLogin(true)">Register</button>
+      <form class="navbar-form navbar-right pull-right" ng-if="!user" style="margin: 30px 0 26px;">
+        <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">Log in</button>
+        <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">Register</button>
       </form>
 
       <!-- user logged -->
       <ul class="nav navbar-nav navbar-right" ng-if="user">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
-            <span class="glyphicon glyphicon-user"></span> {{user.username}} <b class="caret"></b>
+
+          <a class="dropdown-toggle text-center" href="" data-toggle="dropdown" style="padding-bottom: 9px;">
+            <p style="font-size: 30px; padding-top: 12px; margin-bottom: 5px;"><span class="glyphicon glyphicon-user"></span></p>
+            <p>{{user.username}} <b class="caret"></b></p>
           </a>
-          <ul class="dropdown-menu" role="menu">
+          <ul class="dropdown-menu" role="menu" style="width: 100%;">
             <li><a href="#account">Account</a></li>
             <li><a href="" ng-click="logout()">Sign out</a></li>
           </ul>

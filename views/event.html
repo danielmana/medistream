@@ -7,6 +7,10 @@
   <div class="row">
     <div class="col-md-12">
       <h2>{{event.title}}</h2>
+      <p class="lead">
+        <span class="label label-danger">55,00 €</span>
+        <a class="text-danger" href="">Purchase</a> the event or <a class="text-danger" href="">use a code</a> to have full access.
+      </p>
     </div>
   </div>
   <div class="row">
@@ -16,8 +20,11 @@
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-body">
-          <p><strong>{{event.organizer.name}}</strong></p>
+        <div class="panel-body text-center">
+          <p ng-hide="event.organizer.logo"><strong>{{event.organizer.name}}</strong></p>
+          <p ng-show="event.organizer.logo" class="text-center">
+            <a ng-href="{{event.organizer.website}}" target="_blank" class="thumbnail"><img ng-src="{{event.organizer.logo}}"></a>
+          </p>
           <p><span class="glyphicon glyphicon-map-marker"></span> {{event.location}}</p>
           <p><span class="glyphicon glyphicon-time"></span> {{event.start_date|date}} - {{event.finish_date|date}}</p>
         </div>

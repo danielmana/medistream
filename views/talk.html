@@ -2,13 +2,16 @@
   <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="#events">Events</a></li>
-    <li><a href="#events/{{event.id}}">{{event.title}}</a></li>
+    <li><a ng-href="#events/{{event.id}}">{{event.title}}</a></li>
     <li class="active">{{talk.title}}</li>
   </ol>
   <div class="row">
     <div class="col-md-12">
       <h2>{{talk.title}}</h2>
-      <p class="lead"><span class="label label-primary">55,00 €</span> <a>Purchase now</a> or <a>use a code</a> to watch the entire talk.</p>
+      <p class="lead">
+        <span class="label label-default">Preview</span>
+        <a class="text-danger" href="">Purchase</a> the event or <a class="text-danger" href="">use a code</a> to watch the entire video.
+      </p>
     </div>
   </div>
   <div class="row">
@@ -17,10 +20,16 @@
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
-        <div class="panel-body">
-          <p><strong>{{talk.speaker.name}}</strong></p>
+        <div class="panel-body text-center">
+          <p ng-show="event.organizer.logo" class="text-center">
+            <a ng-href="{{event.organizer.website}}" target="_blank" class="thumbnail"><img ng-src="{{event.organizer.logo}}"></a>
+          </p>
           <p><span class="glyphicon glyphicon-map-marker"></span> {{event.location}}</p>
           <p><span class="glyphicon glyphicon-time"></span> {{talk.start_time|date}}. {{talk.start_time|date:'shortTime'}}</p>
+          <a ng-if="talk.speaker.picture" class="thumbnail text-center" style="width: 170px; height: 170px; margin: auto;">
+            <img ng-src="{{talk.speaker.picture}}">
+          </a>
+          <h5>{{talk.speaker.name}}</h5>
         </div>
       </div>
     </div>
