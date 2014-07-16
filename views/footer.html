@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" ng-controller="FooterCtrl">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" ng-controller="FooterCtrl">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-collapse-1">
@@ -11,12 +11,12 @@
     <div class="collapse navbar-collapse" id="footer-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li><p class="navbar-text">© 2014 Medistream</p></li>
-        <li><a ng-href="#terms">Terms & Privacy</a></li>
+        <li><a ng-href="#terms">{{'Terms & Privacy'|translate}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-href="#collaborate">Collaborate</a></li>
+        <li><a ng-href="#collaborate">{{'Collaborate'|translate}}</a></li>
         <li><a ng-href="#contact">{{'Contact'|translate}}</a></li>
-        <li><a ng-href="#about">About</a></li>
+        <li><a ng-href="#about">{{'About'|translate}}</a></li>
         <li class="dropdown" style="cursor: pointer;">
           <a class="dropdown-toggle" data-toggle="dropdown">{{languages[currentLocale]}} <b class=caret></b></a>
           <ul class=dropdown-menu role=menu>

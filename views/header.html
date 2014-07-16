@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
@@ -16,21 +16,21 @@
         <li ng-class="{active: isActive('events')}">
           <a class="text-center" href="#events" style="padding-bottom: 9px; width: 100px;">
             <p style="font-size: 30px; padding-top: 12px; margin-bottom: 5px;"><span class="glyphicon glyphicon-calendar"></span></p>
-            <p>Events</p>
+            <p>{{'Events'|translate}}</p>
           </a>
         </li>
         <li ng-class="{active: isActive('talks')}" ng-if="user">
           <a class="text-center" href="#talks" style="padding-bottom: 9px; width: 100px;">
             <p style="font-size: 30px; padding-top: 12px; margin-bottom: 5px;"><span class="glyphicon glyphicon-film"></span></p>
-            <p>My Videos</p>
+            <p>{{'My Videos'|translate}}</p>
           </a>
         </li>
       </ul>
 
       <!-- user unregistered or not logged -->
       <form class="navbar-form navbar-right pull-right" ng-if="!user" style="margin: 30px 0 26px;">
-        <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">Log in</button>
-        <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">Register</button>
+        <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">{{'Log in'|translate}}</button>
+        <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">{{'Register'|translate}}</button>
       </form>
 
       <!-- user logged -->
@@ -42,8 +42,8 @@
             <p>{{user.username}} <b class="caret"></b></p>
           </a>
           <ul class="dropdown-menu" role="menu" style="width: 100%;">
-            <li><a href="#account">Account</a></li>
-            <li><a href="" ng-click="logout()">Sign out</a></li>
+            <li><a href="#account">{{'Account'|translate}}</a></li>
+            <li><a href="" ng-click="logout()">{{'Sign out'|translate}}</a></li>
           </ul>
         </li>
       </ul>

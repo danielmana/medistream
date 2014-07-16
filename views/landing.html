@@ -6,8 +6,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h1>{{slide.title}}</h1>
-              <h3>{{slide.description}}</h3>
+              <h1>{{slide.title|translate}}</h1>
+              <h3>{{slide.description|translate}}</h3>
             </div>
           </div>
         </div>
@@ -17,22 +17,19 @@
 
   <section id="tutorial" class="tutorial container text-center">
     <br>
-    <h1>Neque porro quisquam est qui dolorem<br>ipsum quia dolor sit amet.</h1>
-    <h2>Neque porro quisquam est qui dolorem ipsum quia<br>dolor sit amet. Ready? Let’s get started.</h2>
+    <h1>{{'slogan.title'|translate}}</h1>
+    <h2>{{'slogan.description'|translate}}</h2>
     <p ng-hide="user">
-      <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">Log in</button>
-      <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">Register</button>
+      <button type="button" class="btn btn-default btn-lg" ng-click="showLogin()">{{'Log in'|translate}}</button>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="showLogin(true)">{{'Register'|translate}}</button>
     </p>
 
     <!-- ### Start of tutorials -->
     <ul id="user-site" class="tutorial-list wrapper active">
-      <li id="create-repo-step" class="image-right animate-in">
-        <h4>Find an event</h4>
-        <p>Head over to <a href="#events">events</a> and find the one you are interested on.</p>
-
-        <p class="details">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo.</p>
+      <li id="step1" class="image-right animate-in">
+        <h4>{{'step1.title'|translate}}</h4>
+        <p>{{'step1.description'|translate}}</p>
+        <p class="details">{{'step1.details'|translate}}</p>
       </li>
 
       <!-- SPECIALITIES NOT SHOWED HERE YET
@@ -44,26 +41,41 @@
       </li>
       -->
 
-      <li id="new-user-step-1" class="option-newuser-w animate-in">
-        <h4>Choose a talk and watch the preview</h4>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-        <img src="images/snapshot_preview.png" width="1054" alt="GitHub for Windows screenshot" class="full-size"/>
+      <li id="step2" class="image-right animate-in">
+        <h4>{{'step2.title'|translate}}</h4>
+        <p>{{'step2.description'|translate}}</p>
+        <p class="details">{{'step2.details'|translate}}</p>
       </li>
 
-      <li id="setup-in-desktop" class="option-ghfm option-ghfw image-right animate-in">
-        <h4>Use your voucher</h4>
-        <p>Click the link "use a code".</p>
-
-        <p class="details">In the case you don't have a voucher you can contact us at contact@medistream.es.</p>
+      <li class="animate-in" style="padding-bottom: 66px;">
+        <h4>{{'step3.title'|translate}}</h4>
+        <p>
+          {{'step3.description'|translate}}
+          <br>
+          {{'step3.details'|translate}}
+        </p>
+        <img src="images/step3.png" width="1054" class="full-size"/>
       </li>
 
-      <li class="option-all animate-in">
-        <h4>…and you're done!</h4>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.</p>
+      <li class="animate-in">
+        <h4>{{'step4.title'|translate}}</h4>
+        <p>
+          {{'step4.description'|translate}}
+          <br>
+          {{'step4.details'|translate}}
+        </p>
+        <img src="images/step4.png" class="full-size thumbnail" style="margin: auto;"/>
+      </li>
+
+      <li class="animate-in">
+        <h4>{{'step5.title'|translate}}</h4>
+        <p>
+          {{'step5.description'|translate}}
+          <br>
+          {{'step5.details'|translate}}
+        </p>
         <div class="hero-octicon">
-          <h1><a href="#events"><span class="glyphicon glyphicon-ok" style="top: 10px;"></span></a></h1>
+          <h1><a href="#events"><span class="glyphicon glyphicon-film" style="top: 10px;"></span></a></h1>
         </div>
       </li>
     </ul>
